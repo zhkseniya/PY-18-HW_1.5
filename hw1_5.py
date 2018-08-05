@@ -78,17 +78,27 @@ class Sheep(Animals):  # овца
         print("{} по имени {} была подстрижена".format(self.animal,self.name))
 
 class Bird(Animals):  # гуси, куры, утка (птицы)
-    animal = ""
-    eggs = 0
 
     def get_eggs(self):  # собирать яйца
         self.eggs += random.randint(1, 10)
         print("{} по имени {} собрали яйцо. У Вас теперь есть {} яиц".format(self.animal, self.name, self.eggs))
 
+class Duck(Bird): #утка
+    animal = ""
+    eggs = 0
+
+class Goose(Bird): #гуси
+    animal = ""
+    eggs = 0
+
+class Chicken(Bird): #куры
+    animal = ""
+    eggs = 0
+
 all_animal = []
 
 # гусь Серый
-gray = Bird("Серый", 4)
+gray = Goose("Серый", 4)
 gray.animal = "Гусь"
 
 gray.feed_animal(20)
@@ -96,7 +106,7 @@ gray.get_eggs()
 gray.get_voice()
 
 # гусь Белый
-white = Bird("Белый", 5)
+white = Goose("Белый", 5)
 white.animal = "Гусь"
 
 white.feed_animal(50)
@@ -124,14 +134,14 @@ sheep_2.feed_animal(80)
 sheep_2.get_cut()
 
 # Курица Ко-Ко
-chicken_1 = Bird("Ко-ко", 2)
+chicken_1 = Chicken("Ко-ко", 2)
 chicken_1.animal = "Курица"
 
 chicken_1.feed_animal(30)
 chicken_1.get_eggs()
 
 # Курица Кукареку
-chicken_2 = Bird("Кукареку", 1)
+chicken_2 = Chicken("Кукареку", 1)
 chicken_2.animal = "Курица"
 
 chicken_2.feed_animal(40)
@@ -152,7 +162,7 @@ goat_2.feed_animal(60)
 goat_2.get_milk()
 
 # утка Кряква
-duck = Bird("Кряква", 1.5)
+duck = Duck("Кряква", 1.5)
 duck.animal = "Утка"
 
 duck.feed_animal(60)
